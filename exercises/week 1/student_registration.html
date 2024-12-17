@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Student Registration Page</title>
+       
+    </head>
+<body>
+     
+    <form id = "student_form">
+        <fieldset>
+            <legend>Student Information</legend>
+            <label for="full-name">Full Name:</label>
+            <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" required><br><br>
+            
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required><br><br>
+            
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required><br><br>
+            
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required><br><br>
+
+            <label for = "topic"> Select Program: </label>
+            <select name="topic" id="topic" required>
+                <option value="" selected="selected">Please select a program</option>
+                <option value="Computer Science" >Computer Science</option>
+                <option value="Engineering" >Engineering</option>
+                <option value="Mathematics" >Mathematics</option>
+              </select>
+            <br>
+            <br>
+
+
+            <label> Year of Study: </label><br>
+            <input type="radio" id= "first" name="yos" value = "First Year" required>
+            <label for ="first">First Year</label><br>
+            <input type="radio" id= "second" name="yos" value = "Second Year">
+            <label for ="second">Second Year</label><br>
+            <input type="radio" id= "third" name="yos" value = "Third Year">
+            <label for ="third">Third Year</label><br>
+            <input type="radio" id= "fourth" name="yos" value = "Forth Year">
+            <label for ="fourth">Fourth Year</label>
+
+            <br><br>
+            <label>Skills:</label>
+            <input type="checkbox" id="skill1" name = "skill1" value ="Programming"> 
+            <label for="skill1">Programming</label>
+            <input type="checkbox" id="skill2" name = "skill2" value ="Data Analysis">  
+            <label for="skill2">Data Analysis</label>
+            <input type="checkbox" id="skill3" name = "skill3" value ="Data Analysis"> 
+            <label for="skill3">Design</label>
+            <input type="checkbox" id="skill4" name = "skill4" value ="Data Analysis">
+            <label for="skill4">Communication</label>
+        </fieldset>
+    
+        <button type="submit">Submit</button>
+    </form>
+    <!-- Section to Display Student List -->
+     <fieldset>
+<div class="student-list">
+    <h2>Student List</h2>
+    <ul id="students">
+        <!-- List of students will be dynamically added here -->
+    </ul>
+</div>
+<button type="button" id="reset-list">Reset List</button>
+    </fieldset>
+    <script src="script.js"></script>
+</body>
+
+
+</html>
