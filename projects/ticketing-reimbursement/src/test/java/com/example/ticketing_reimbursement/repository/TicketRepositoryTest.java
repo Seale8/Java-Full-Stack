@@ -1,10 +1,9 @@
 package com.example.ticketing_reimbursement.repository;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.util.Optional;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +22,7 @@ class TicketRepositoryTest {
     @BeforeEach
     @SuppressWarnings("unused")
     void setUp() {
-        ticket = new Ticket(1, "Test Description", 200);
+        ticket = new Ticket(1, "Test Description", 200.00);
         ticketRepository.save(ticket);
     }
 
@@ -36,7 +35,7 @@ class TicketRepositoryTest {
 
     @Test
     void testSaveTicket() {
-        Ticket newTicket = new Ticket(2, "New Ticket Description", 300);
+        Ticket newTicket = new Ticket(2, "New Ticket Description", 300.00);
         Ticket savedTicket = ticketRepository.save(newTicket);
 
         assertEquals(2, savedTicket.getPostedBy());

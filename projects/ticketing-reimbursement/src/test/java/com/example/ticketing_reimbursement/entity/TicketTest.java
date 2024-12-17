@@ -1,15 +1,14 @@
 package com.example.ticketing_reimbursement.entity;
 
 
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
 
 class TicketTest {
 
     @Test
     void testTicketConstructorAndGettersSetters() {
-        Ticket ticket = new Ticket(1, "Description", 100);
+        Ticket ticket = new Ticket(1, "Description", 100.00);
 
         // Verify getters and setters
         assertEquals(1, ticket.getPostedBy());
@@ -20,7 +19,7 @@ class TicketTest {
 
     @Test
     void testTicketConstructorWithAllFields() {
-        Ticket ticket = new Ticket(1, 22,"Description", 100, "Approved");
+        Ticket ticket = new Ticket(1, 22,"Description", 100.00, "Approved");
 
         // Verify all fields
         assertEquals(1, ticket.getTicketId());

@@ -1,10 +1,9 @@
 package com.example.ticketing_reimbursement.entity;
 
-import jakarta.persistence.Id;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
@@ -30,13 +29,13 @@ public class Ticket {
     private String description;
 
     private String status;
-    private Integer amount;
+    private Double amount;
 
     public Ticket(){
     }
 
 
-    public Ticket(Integer postedBy, String description,Integer amount)  {
+    public Ticket(Integer postedBy, String description,Double amount)  {
         this.postedBy = postedBy;
         this.description = description;
         this.amount = amount;
@@ -52,7 +51,7 @@ public class Ticket {
      * @param messageText
      * @param timePostedEpoch
      */
-    public Ticket(Integer ticketId, Integer postedBy, String description,Integer amount,String status) {
+    public Ticket(Integer ticketId, Integer postedBy, String description,Double amount,String status) {
         this.ticketId = ticketId;
         this.postedBy = postedBy;
         this.description = description;
@@ -95,14 +94,12 @@ public class Ticket {
         this.description = descriptionText;
     }
 
-    public Integer getAmount() {
+    public Double getAmount() {
         return amount;
     }
 
-    public void setAmount(Integer amount) {
+    public void setAmount(Double amount) {
         this.amount = amount;
-
-
     }
 
     public String getStatus() {
