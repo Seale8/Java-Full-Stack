@@ -18,7 +18,7 @@ public class Account {
      */
     @Column(name="accountId")
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer accountId;
 
     /**
