@@ -38,3 +38,60 @@
 2024-12-20T00:58:21.850-05:00  WARN 19312 --- [ticketing-reimbursement] [http-nio-8080-exec-1] com.zaxxer.hikari.pool.PoolBase          : HikariPool-2 - Failed to validate connection org.postgresql.jdbc.PgConnection@7103d579 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
 2024-12-20T00:58:21.887-05:00  WARN 19312 --- [ticketing-reimbursement] [http-nio-8080-exec-1] com.zaxxer.hikari.pool.PoolBase          : HikariPool-2 - Failed to validate connection org.postgresql.jdbc.PgConnection@18e61ee5 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
 2024-12-20T00:58:21.919-05:00  WARN 19312 --- [ticketing-reimbursement] [http-nio-8080-exec-1] com.zaxxer.hikari.pool.PoolBase          : HikariPool-2 - Failed to validate connection org.postgresql.jdbc.PgConnection@17a77bb2 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2024-12-20T01:05:52.721-05:00  INFO 19312 --- [ticketing-reimbursement] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2024-12-20T01:05:52.729-05:00  INFO 19312 --- [ticketing-reimbursement] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2024-12-20T01:05:52.733-05:00  INFO 19312 --- [ticketing-reimbursement] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-20T01:05:52.735-05:00  INFO 19312 --- [ticketing-reimbursement] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2024-12-20T01:05:53.027-05:00  INFO 19312 --- [ticketing-reimbursement] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2024-12-20T09:13:49.773-05:00  INFO 13144 --- [ticketing-reimbursement] [restartedMain] c.e.t.TicketingReimbursementApplication  : Starting TicketingReimbursementApplication using Java 23.0.1 with PID 13144 (C:\Users\seale\dev\Java-Full-Stack-Training\projects\ticketing-reimbursement\target\classes started by seale in C:\Users\seale\dev\Java-Full-Stack-Training\projects\ticketing-reimbursement)
+2024-12-20T09:13:49.776-05:00  INFO 13144 --- [ticketing-reimbursement] [restartedMain] c.e.t.TicketingReimbursementApplication  : No active profile set, falling back to 1 default profile: "default"
+2024-12-20T09:13:49.869-05:00  INFO 13144 --- [ticketing-reimbursement] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-12-20T09:13:49.869-05:00  INFO 13144 --- [ticketing-reimbursement] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-12-20T09:13:50.916-05:00  INFO 13144 --- [ticketing-reimbursement] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-20T09:13:51.016-05:00  INFO 13144 --- [ticketing-reimbursement] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 85 ms. Found 2 JPA repository interfaces.
+2024-12-20T09:13:51.878-05:00  INFO 13144 --- [ticketing-reimbursement] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-12-20T09:13:51.908-05:00  INFO 13144 --- [ticketing-reimbursement] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-20T09:13:51.909-05:00  INFO 13144 --- [ticketing-reimbursement] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2024-12-20T09:13:51.990-05:00  INFO 13144 --- [ticketing-reimbursement] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-20T09:13:51.992-05:00  INFO 13144 --- [ticketing-reimbursement] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2122 ms
+2024-12-20T09:13:52.043-05:00  INFO 13144 --- [ticketing-reimbursement] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-20T09:13:53.120-05:00  INFO 13144 --- [ticketing-reimbursement] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3b2fa9a4
+2024-12-20T09:13:53.123-05:00  INFO 13144 --- [ticketing-reimbursement] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-20T09:13:53.139-05:00  INFO 13144 --- [ticketing-reimbursement] [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://database-1.cvqow4i6m9e3.us-east-2.rds.amazonaws.com:5432/postgres'
+2024-12-20T09:13:53.304-05:00  INFO 13144 --- [ticketing-reimbursement] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-20T09:13:53.406-05:00  INFO 13144 --- [ticketing-reimbursement] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.2.Final
+2024-12-20T09:13:53.468-05:00  INFO 13144 --- [ticketing-reimbursement] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-12-20T09:13:53.912-05:00  INFO 13144 --- [ticketing-reimbursement] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-20T09:13:54.142-05:00  WARN 13144 --- [ticketing-reimbursement] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-20T09:13:54.217-05:00  INFO 13144 --- [ticketing-reimbursement] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 16.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-20T09:13:55.322-05:00  INFO 13144 --- [ticketing-reimbursement] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-20T09:13:55.514-05:00  INFO 13144 --- [ticketing-reimbursement] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-20T09:13:55.993-05:00  WARN 13144 --- [ticketing-reimbursement] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-20T09:13:56.473-05:00  INFO 13144 --- [ticketing-reimbursement] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-12-20T09:13:56.524-05:00  INFO 13144 --- [ticketing-reimbursement] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-12-20T09:13:56.537-05:00  INFO 13144 --- [ticketing-reimbursement] [restartedMain] c.e.t.TicketingReimbursementApplication  : Started TicketingReimbursementApplication in 7.531 seconds (process running for 8.275)
+2024-12-20T09:14:07.096-05:00  INFO 13144 --- [ticketing-reimbursement] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-20T09:14:07.097-05:00  INFO 13144 --- [ticketing-reimbursement] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-12-20T09:14:07.099-05:00  INFO 13144 --- [ticketing-reimbursement] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-12-20T09:14:07.404-05:00  INFO 13144 --- [ticketing-reimbursement] [http-nio-8080-exec-2] c.e.t.controller.Controller              : Login attempt for account: manager
+2024-12-20T09:14:07.855-05:00  INFO 13144 --- [ticketing-reimbursement] [http-nio-8080-exec-2] c.e.t.controller.Controller              : Login successful for account ID: 1
+2024-12-20T09:14:58.996-05:00  INFO 13144 --- [ticketing-reimbursement] [http-nio-8080-exec-1] c.e.t.controller.Controller              : Login attempt for account: employee2
+2024-12-20T09:14:59.064-05:00 ERROR 13144 --- [ticketing-reimbursement] [http-nio-8080-exec-1] c.e.t.controller.Controller              : Login failed: Account Not Found
+2024-12-20T09:15:11.053-05:00  INFO 13144 --- [ticketing-reimbursement] [http-nio-8080-exec-3] c.e.t.controller.Controller              : Attempting to register account: Account{accountId=null, username='employee2', password='employee', role='employee'}
+2024-12-20T09:15:11.446-05:00  INFO 13144 --- [ticketing-reimbursement] [http-nio-8080-exec-3] c.e.t.controller.Controller              : Account registered successfully with ID: 252
+2024-12-20T09:16:34.249-05:00  INFO 13144 --- [ticketing-reimbursement] [http-nio-8080-exec-7] c.e.t.controller.Controller              : Login attempt for account: manager
+2024-12-20T09:16:34.393-05:00  INFO 13144 --- [ticketing-reimbursement] [http-nio-8080-exec-7] c.e.t.controller.Controller              : Login successful for account ID: 1
+2024-12-20T09:17:31.294-05:00  INFO 13144 --- [ticketing-reimbursement] [http-nio-8080-exec-9] c.e.t.controller.Controller              : Attempting to delete ticket with ID: 352
+2024-12-20T09:17:31.468-05:00  INFO 13144 --- [ticketing-reimbursement] [http-nio-8080-exec-9] c.e.t.controller.Controller              : Ticket with ID 352 deleted successfully
+2024-12-20T09:18:44.168-05:00  INFO 13144 --- [ticketing-reimbursement] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2024-12-20T09:18:45.870-05:00  INFO 13144 --- [ticketing-reimbursement] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2024-12-20T09:18:45.945-05:00  INFO 13144 --- [ticketing-reimbursement] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-20T09:18:46.071-05:00  INFO 13144 --- [ticketing-reimbursement] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-20T09:18:46.487-05:00  INFO 13144 --- [ticketing-reimbursement] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

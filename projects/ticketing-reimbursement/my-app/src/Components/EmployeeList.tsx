@@ -68,6 +68,8 @@ export default function ManagerEmployeeList() {
         <table className="table table-bordered mt-3">
           <thead>
             <tr>
+            <th>ID</th>
+              
               <th>Name</th>
               <th>Role</th>
               <th>Actions</th>
@@ -78,6 +80,7 @@ export default function ManagerEmployeeList() {
               (employee) =>
                 employee.role !== "manager" && (
                   <tr key={employee.accountId}>
+                    <td>{employee.accountId}</td>
                     <td>{employee.username}</td>
                     <td>{employee.role}</td>
                     <td>
