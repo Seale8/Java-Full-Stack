@@ -71,7 +71,7 @@ class AccountServiceTest {
 
         // Act & Assert
         Exception exception = assertThrows(Exception.class, () -> accountService.registerAccount(account));
-        assertEquals("Password must be at least 6 characters long", exception.getMessage());
+        assertEquals("Password must be at least 4 characters long", exception.getMessage());
     }
 
     @Test

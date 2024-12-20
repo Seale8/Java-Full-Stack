@@ -9,4 +9,8 @@ import com.example.ticketing_reimbursement.entity.Ticket;
 public interface TicketRepository extends JpaRepository<Ticket, Integer>{
     List<Ticket> findTicketByPostedBy(int accountId);
 
+    List<Ticket> findTicketByStatus(String status);
+
+    List<Ticket> findBypostedByAndStatus(Integer accountId, String status);
+
 }

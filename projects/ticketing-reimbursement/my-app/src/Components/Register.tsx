@@ -37,6 +37,7 @@ export default function Register() {
       return;
     }
 
+
     try {
       const response = await axios.post('http://localhost:8080/register', {
         username,
@@ -46,35 +47,24 @@ export default function Register() {
 
       console.log('Registration successful:', response.data);
       setSuccess(true);
-      dispatch({ type: 'LOGIN', payload: { username, password, role: 'employee' } });
+      const account = response.data; 
+      dispatch({ type: 'LOGIN', payload: { username: account.username, password: account.password, role: account.role,accountId: account.accountId}});
 
       // Navigate to the login page after successful registration
     } catch (error: any) {
       console.error('Error during registration:', error);
 
       if (error.response && error.response.status === 400) {
-        setError('Username already exists. Please try a different one.');
-      } else {
-        setError('An unexpected error occurred. Please try again later.');
-      }
+        setError(error.response.data);
+      } 
     }
   }
 
   return (
     <div className="container mt-5">
     
-      {error && (
-        <div className="mb-3">
-          
-          <div
-            className="alert alert-danger"
-            role="alert"
-            style={{ padding: '10px', fontWeight: 'bold', fontSize: '14px' }}
-          >
-            {error}
-          </div>
-        </div>
-      )}
+       {error && <div className="alert alert-danger">{error}</div>}
+      {success && <div className="alert alert-success">{success}</div>}
       <UserInput
         username={username}
         setUsername={setUsername}

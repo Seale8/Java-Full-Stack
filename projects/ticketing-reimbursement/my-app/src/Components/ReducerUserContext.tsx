@@ -4,6 +4,7 @@ export interface User {
   username: string;
   password: string;
   role: "employee" | "manager";
+  accountId?: number;
 }
 
 interface AuthState {

@@ -47,7 +47,7 @@ export default function Login() {
         console.log('API Response:', account);
 
         // Dispatch the user data to the global context
-        dispatch({ type: 'LOGIN', payload: { username: account.username, password: account.password, role: account.role }});
+        dispatch({ type: 'LOGIN', payload: { username: account.username, password: account.password, role: account.role,accountId: account.accountId}});
 
         navigate(account.role === 'manager' ? '/manager-dashboard' : '/employee-dashboard');
 
@@ -58,7 +58,7 @@ export default function Login() {
         if (error.message.includes('ERR_CONNECTION_REFUSED')) {
             setError('Unable to connect to the server. Please try again later.');
         } else if (error.response && error.response.status === 401) {
-            setError('Invalid credentials. Please try again.');
+            setError(error.response.data);
         } else {
             setError('An unexpected error occurred. Please try again later.');
         }

@@ -52,6 +52,34 @@ public class TicketService {
         return ticketRepository.findTicketByPostedBy(id);
     }
 
+    public List<Ticket> getTicketsByStatus(String status) throws Exception{
+      
+        return ticketRepository.findTicketByStatus(status);
+    }
+
+    public Ticket updateTicketStatus(int id, String newStatus) throws Exception{
+      
+            // Fetch the ticket by ID
+        Optional<Ticket> optionalTicket = ticketRepository.findById(id);
+
+        if (!optionalTicket.isPresent()) {
+            throw new Exception ("Ticket with ID " + id + " does not exist.");
+        }
+
+        Ticket ticket = optionalTicket.get();
+
+        // Update the status
+        ticket.setStatus(newStatus);
+
+        // Save the updated ticket
+       return ticketRepository.save(ticket);
+    }
+
+	public List<Ticket> getTicketsByAccountIdAndStatus(Integer accountId, String status) {
+        return ticketRepository.findBypostedByAndStatus(accountId, status);
+	
+	}
+
 
 
 

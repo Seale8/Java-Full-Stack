@@ -1,3 +1,54 @@
+/* Add to your CSS file or in a <style> block */
+
+
+
+
+/* Add hover effect for better user experience */
+td.no-border button:hover {
+  background-color: #9f1825;
+}
+
+.status-light {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 5px;
+  animation: glow 1.5s ease-in-out infinite alternate; /* Adding glowing effect */
+}
+
+.status-light.yellow {
+  background-color: #ffc60c;
+  box-shadow: 0 0 5px #ffc60c, 0 0 10px #ffc60c, 0 0 15px #ffc60c, 0 0 20px #ffc60c;
+}
+
+.status-light.green {
+  background-color: green;
+  box-shadow: 0 0 5px green, 0 0 10px green, 0 0 15px green, 0 0 20px green;
+}
+
+.status-light.red {
+  background-color: red;
+  box-shadow: 0 0 5px red, 0 0 10px red, 0 0 15px red, 0 0 20px red;
+}
+
+.status-light.gray {
+  background-color: gray;
+  box-shadow: 0 0 5px gray, 0 0 10px gray, 0 0 15px gray, 0 0 20px gray;
+}
+
+/* Glowing animation */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 0 0 10px rgba(255, 255, 255, 0.7), 0 0 15px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.7), 0 0 30px rgba(255, 255, 255, 0.7), 0 0 45px rgba(255, 255, 255, 0.7), 0 0 60px rgba(255, 255, 255, 0.7);
+  }
+}
+
+
+
 .App {
   text-align: center;
 }
