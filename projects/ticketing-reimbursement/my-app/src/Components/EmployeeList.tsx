@@ -31,27 +31,26 @@ export default function ManagerEmployeeList() {
   }, []);
 
   const promoteEmployee = async (employeeId: number) => {
-    setEmployees((prevEmployees) =>
-      prevEmployees.map((employee) =>
-        employee.accountId === employeeId
-          ? { ...employee, role: "Manager" }
-          : employee
-      )
-    );
     try {
       const response = await axios.put(
         `http://localhost:8080/promote/${employeeId}`
       );
       if (response.status === 200) {
         setSuccess("Employee promoted to Manager successfully!");
+
         // Update the employee's role in the local state
         setEmployees((prevEmployees) =>
           prevEmployees.map((employee) =>
             employee.accountId === employeeId
-              ? { ...employee, role: "Manager" }
+              ? { ...employee, role: "manager" }
               : employee
           )
         );
+        console.log(
+          `Employee ${employeeId} promoted successfully! Updated state:`,
+          employees
+        );
+        setTimeout(() => setSuccess(""), 3000);
       }
     } catch (error: any) {
       setError(error.response.data);
@@ -75,22 +74,23 @@ export default function ManagerEmployeeList() {
             </tr>
           </thead>
           <tbody>
-            {employees.map((employee) => (
-              <tr key={employee.accountId}>
-                <td>{employee.username}</td>
-                <td>{employee.role}</td>
-                <td>
-                  {employee.role !== "Manager" && (
-                    <button
-                      className="btn btn-primary"
-                      onClick={() => promoteEmployee(employee.accountId)}
-                    >
-                      Promote to Manager
-                    </button>
-                  )}
-                </td>
-              </tr>
-            ))}
+            {employees.map(
+              (employee) =>
+                employee.role !== "manager" && (
+                  <tr key={employee.accountId}>
+                    <td>{employee.username}</td>
+                    <td>{employee.role}</td>
+                    <td>
+                      <button
+                        className="btn btn-primary"
+                        onClick={() => promoteEmployee(employee.accountId)}
+                      >
+                        Promote to Manager
+                      </button>
+                    </td>
+                  </tr>
+                )
+            )}
           </tbody>
         </table>
       </div>
