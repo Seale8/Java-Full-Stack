@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,6 +24,8 @@ import com.example.ticketing_reimbursement.service.TicketService;
 
 @RestController
 public class Controller {
+    private static final Logger logger = LoggerFactory.getLogger(Controller.class);
+
     @Autowired
     private AccountService accountService;
 
@@ -30,20 +34,27 @@ public class Controller {
 
     @PostMapping("/register")
     public ResponseEntity<?> registerAccount(@RequestBody Account account) {
+        logger.info("Attempting to register account: {}", account);
         try {
             Account createdAccount = accountService.registerAccount(account);
+            logger.info("Account registered successfully with ID: {}", createdAccount.getAccountId());
+
             return ResponseEntity.status(HttpStatus.OK).body(createdAccount);
         } catch (Exception e) {
+            logger.error("Error registering account: {}", e.getMessage());
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
     }
 
     @PostMapping("/login")
     public ResponseEntity<?> loginAccount(@RequestBody Account account) {
+        logger.info("Login attempt for account: {}", account.getUsername());
         try {
             Account verifiedAccount = accountService.verifyAccount(account);
+            logger.info("Login successful for account ID: {}", verifiedAccount.getAccountId());
             return ResponseEntity.status(HttpStatus.OK).body(verifiedAccount);
         } catch (Exception e) {
+            logger.error("Login failed: {}", e.getMessage());
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(e.getMessage());
         }
     }
@@ -60,10 +71,16 @@ public class Controller {
 
     @GetMapping("/tickets/{accountId}")
     public ResponseEntity<?> getTicketsByAccountId(@PathVariable Integer accountId) {
+        logger.info("Fetching tickets for account ID: {}", accountId);
+
         try {
             List<Ticket> tickets = ticketService.getAllTicketsFromAccount(accountId);
+            logger.info("Found {} tickets for account ID: {}", tickets.size(), accountId);
+
             return ResponseEntity.status(HttpStatus.ACCEPTED).body(tickets);
         } catch (Exception e) {
+            logger.error("Error fetching tickets for account ID {}: {}", accountId, e.getMessage());
+
             return ResponseEntity.status(HttpStatus.NO_CONTENT).body(e.getMessage());
         }
 
@@ -129,10 +146,17 @@ public class Controller {
 
     @DeleteMapping("tickets/{ticketId}")
     public ResponseEntity<?> deleteMessage(@PathVariable Integer ticketId) throws Exception {
+        logger.info("Attempting to delete ticket with ID: {}", ticketId);
+
         try {
+
             ticketService.deleteTicket(ticketId);
+            logger.info("Ticket with ID {} deleted successfully", ticketId);
+
             return ResponseEntity.status(HttpStatus.ACCEPTED).body(1);
         } catch (Exception e) {
+            logger.error("Error deleting ticket ID {}: {}", ticketId, e.getMessage());
+
             return ResponseEntity.status(HttpStatus.NO_CONTENT).body(e.getMessage());
         }
     }
