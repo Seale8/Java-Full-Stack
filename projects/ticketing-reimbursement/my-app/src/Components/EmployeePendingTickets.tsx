@@ -58,7 +58,8 @@ export default function EmployeePendingTickets() {
         `http://localhost:8080/tickets/${ticketId}`
       );
 
-      if (response.status === 200) {
+      if (response.status === 202) {
+        console.log("ticket deleted")
         setTickets((prevTickets) =>
           prevTickets.filter((ticket) => ticket.ticketId !== ticketId)
         );
@@ -68,6 +69,7 @@ export default function EmployeePendingTickets() {
         setTimeout(() => {
           setAlert(null); // Hide the alert after 3 seconds
         }, 3000);
+      
       }
     } catch (err: any) {
       console.error("Error deleting ticket:", err);
@@ -100,14 +102,15 @@ export default function EmployeePendingTickets() {
     }
 
     setSortConfig({ key, direction });
-
-    const sortedTickets = [...tickets].sort((a, b) => {
-      if (a[key] < b[key]) return direction === "asc" ? -1 : 1;
-      if (a[key] > b[key]) return direction === "asc" ? 1 : -1;
-      return 0;
+    
+    setTickets((prevTickets) => {
+      const sortedTickets = [...prevTickets].sort((a, b) => {
+        if (a[key] < b[key]) return direction === "asc" ? -1 : 1;
+        if (a[key] > b[key]) return direction === "asc" ? 1 : -1;
+        return 0;
+      });
+      return sortedTickets;
     });
-
-    setTickets(sortedTickets);
   };
 
   return (
